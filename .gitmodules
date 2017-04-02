@@ -1,0 +1,3 @@
+[submodule "projects/AtlassianCLI"]
+	path = projects/AtlassianCLI
+	url = https://github.com/Invoke-Automation/AtlassianCLI.git
