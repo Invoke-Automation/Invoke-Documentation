@@ -1,0 +1,5 @@
+- name: AtlassianCLI
+  description: AtlassianCLI provides a PowerShell interface to several Atlassian web applications using their respective REST API's
+  github: https://github.com/Invoke-Automation/AtlassianCLI
+  index: 0
+  path: /projects/AtlassianCLI

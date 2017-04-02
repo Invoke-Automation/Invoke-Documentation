@@ -1,0 +1,35 @@
+{% capture project_dir %}/projects/{% endcapture %}
+{% assign project_dir_size = project_dir | size %}
+
+{% for p in site.html_pages %}
+  {% if p.hide != true %}
+    {% assign result = p.url | slice: 0, project_dir_size %}
+    {% if result != project_dir %}
+    <li {% if page.title == p.title %}class="active"{% endif %}>
+      <a href="{{p.url}}">{{p.title}}</a>
+    </li>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% assign sorted_projects = site.data.projects | sort:"index","last" %}
+{% for project in sorted_projects %}
+<li class="dropdown">
+  {% capture project_base_url %}{{ project_dir }}{{ project.name }}{% endcapture %}
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">{{ project.name }}<span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    {% assign sorted_pages = site.pages | sort:"index","last" %}
+    {% for p in sorted_pages %}
+      {% assign project_base_url_size = project_base_url | size %}
+      {% assign result = p.url | slice: 0, project_base_url_size %}
+      {% if result == project_base_url %}
+        {% assign project_page_path = p.path | split: "/" %}
+        {% assign project_page_name = project_page_path.last | split: "." %}
+        <li {% if page.url == p.url %}class="active"{% endif %}>
+          <a href="{{site.github.url}}{{p.url}}">{{ project_page_name.first }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</li>  
+{% endfor %}
