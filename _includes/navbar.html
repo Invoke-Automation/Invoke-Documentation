@@ -20,14 +20,16 @@
   <ul class="dropdown-menu">
     {% assign sorted_pages = site.pages | sort:"index","last" %}
     {% for p in sorted_pages %}
-      {% assign project_base_url_size = project_base_url | size %}
-      {% assign result = p.url | slice: 0, project_base_url_size %}
-      {% if result == project_base_url %}
-        {% assign project_page_path = p.path | split: "/" %}
-        {% assign project_page_name = project_page_path.last | split: "." %}
-        <li {% if page.url == p.url %}class="active"{% endif %}>
-          <a href="{{site.github.url}}{{p.url}}">{{ project_page_name.first }}</a>
-        </li>
+      {% if p.hide != true %}
+        {% assign project_base_url_size = project_base_url | size %}
+        {% assign result = p.url | slice: 0, project_base_url_size %}
+        {% if result == project_base_url %}
+          {% assign project_page_path = p.path | split: "/" %}
+          {% assign project_page_name = project_page_path.last | split: "." %}
+          <li {% if page.url == p.url %}class="active"{% endif %}>
+            <a href="{{site.github.url}}{{p.url}}">{{ project_page_name.first }}</a>
+          </li>
+        {% endif %}
       {% endif %}
     {% endfor %}
   </ul>
