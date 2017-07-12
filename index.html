@@ -9,5 +9,5 @@ hide: true
 {% for project in site.data.projects %}
 	<h2>{{ project.name }}</h2>
 	<p>{{ project.description }}</p>
-	<p><a href="{{ project.github }}">GitHub</a> &middot; <a href="{{ site.github.url }}{{ project.path }}">README</a></p>
+	<p><a href="{{ project.github }}">GitHub</a> &middot; <a href="{{ site.github.url }}{{ project.path }}/README">README</a></p>
 {% endfor %}
