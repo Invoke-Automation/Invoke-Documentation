@@ -3,3 +3,8 @@
   github: https://github.com/Invoke-Automation/AtlassianCLI
   index: 0
   path: /projects/AtlassianCLI
+- name: IACompliance
+  description: Compliance module is designed as a framework for descibing rules in PowerShell and checking the compliance of these rules on specified objects.
+  github: https://github.com/Invoke-Automation/IACompliance
+  index: 1
+  path: /projects/IACompliance

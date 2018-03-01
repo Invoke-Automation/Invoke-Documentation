@@ -1,7 +1,7 @@
 # name of the software
 name: Invoke-Documentation
 # current version of the software
-version: 0.1.0
+version: 0.2.0
 # licence of the software
 license: MIT License
 licenseUrl: http://opensource.org/licenses/MIT

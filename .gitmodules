@@ -1,3 +1,6 @@
 [submodule "projects/AtlassianCLI"]
 	path = projects/AtlassianCLI
 	url = https://github.com/Invoke-Automation/AtlassianCLI.git
+[submodule "projects/IACompliance"]
+	path = projects/IACompliance
+	url = https://github.com/Invoke-Automation/IACompliance.git
