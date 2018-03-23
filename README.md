@@ -6,6 +6,19 @@ The aim is to centralise all (technical) documentation for all projects of Invok
 
 Running the site localy
 -----------------------
+### Checking out a repo with submodules
+for Git 2.13 and later you can clone everything using
+```bash
+git clone --recurse-submodules https://github.com/Invoke-Automation/Invoke-Documentation.git
+```
+
+If you already cloned and forgot or if you are using older versions of Git
+```bash
+git clone https://github.com/Invoke-Automation/Invoke-Documentation.git
+cd Invoke-Automation
+git submodule update --init --recursive
+```
+
 ### Install Jekyll
 
 Use the [Jekyll documentation](https://jekyllrb.com/docs/quickstart/)
